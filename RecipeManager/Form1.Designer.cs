@@ -29,31 +29,31 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             System.Windows.Forms.Label descriptionLabel;
             System.Windows.Forms.Label titleLabel;
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.recipeBindingNavigator = new System.Windows.Forms.BindingNavigator(this.components);
+            this.bindingNavigatorAddNewItem = new System.Windows.Forms.ToolStripButton();
+            this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
+            this.bindingNavigatorDeleteItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMoveFirstItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMovePreviousItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorSeparator = new System.Windows.Forms.ToolStripSeparator();
             this.bindingNavigatorPositionItem = new System.Windows.Forms.ToolStripTextBox();
-            this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
             this.bindingNavigatorSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.bindingNavigatorMoveNextItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMoveLastItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
-            this.bindingNavigatorAddNewItem = new System.Windows.Forms.ToolStripButton();
-            this.bindingNavigatorDeleteItem = new System.Windows.Forms.ToolStripButton();
             this.recipeBindingNavigatorSaveItem = new System.Windows.Forms.ToolStripButton();
             this.ingredientsGroupBox = new System.Windows.Forms.GroupBox();
+            this.ingredientsDataGridView = new System.Windows.Forms.DataGridView();
+            this.ingredientsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.recipeGroupBox = new System.Windows.Forms.GroupBox();
             this.descriptionTextBox = new System.Windows.Forms.TextBox();
             this.titleTextBox = new System.Windows.Forms.TextBox();
-            this.ingredientsBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.ingredientsDataGridView = new System.Windows.Forms.DataGridView();
             this.stepsGroupBox = new System.Windows.Forms.GroupBox();
-            this.stepsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.stepsDataGridView = new System.Windows.Forms.DataGridView();
+            this.stepsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -66,14 +66,32 @@
             ((System.ComponentModel.ISupportInitialize)(this.recipeBindingNavigator)).BeginInit();
             this.recipeBindingNavigator.SuspendLayout();
             this.ingredientsGroupBox.SuspendLayout();
-            this.recipeGroupBox.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.ingredientsBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ingredientsDataGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ingredientsBindingSource)).BeginInit();
+            this.recipeGroupBox.SuspendLayout();
             this.stepsGroupBox.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.stepsBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.stepsDataGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.stepsBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.recipeBindingSource)).BeginInit();
             this.SuspendLayout();
+            // 
+            // descriptionLabel
+            // 
+            descriptionLabel.AutoSize = true;
+            descriptionLabel.Location = new System.Drawing.Point(6, 43);
+            descriptionLabel.Name = "descriptionLabel";
+            descriptionLabel.Size = new System.Drawing.Size(63, 13);
+            descriptionLabel.TabIndex = 11;
+            descriptionLabel.Text = "Description:";
+            // 
+            // titleLabel
+            // 
+            titleLabel.AutoSize = true;
+            titleLabel.Location = new System.Drawing.Point(39, 17);
+            titleLabel.Name = "titleLabel";
+            titleLabel.Size = new System.Drawing.Size(30, 13);
+            titleLabel.TabIndex = 9;
+            titleLabel.Text = "Title:";
             // 
             // recipeBindingNavigator
             // 
@@ -104,6 +122,31 @@
             this.recipeBindingNavigator.Size = new System.Drawing.Size(482, 25);
             this.recipeBindingNavigator.TabIndex = 0;
             this.recipeBindingNavigator.Text = "bindingNavigator1";
+            // 
+            // bindingNavigatorAddNewItem
+            // 
+            this.bindingNavigatorAddNewItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorAddNewItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorAddNewItem.Image")));
+            this.bindingNavigatorAddNewItem.Name = "bindingNavigatorAddNewItem";
+            this.bindingNavigatorAddNewItem.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorAddNewItem.Size = new System.Drawing.Size(23, 22);
+            this.bindingNavigatorAddNewItem.Text = "Add new";
+            // 
+            // bindingNavigatorCountItem
+            // 
+            this.bindingNavigatorCountItem.Name = "bindingNavigatorCountItem";
+            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(35, 22);
+            this.bindingNavigatorCountItem.Text = "of {0}";
+            this.bindingNavigatorCountItem.ToolTipText = "Total number of items";
+            // 
+            // bindingNavigatorDeleteItem
+            // 
+            this.bindingNavigatorDeleteItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorDeleteItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorDeleteItem.Image")));
+            this.bindingNavigatorDeleteItem.Name = "bindingNavigatorDeleteItem";
+            this.bindingNavigatorDeleteItem.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorDeleteItem.Size = new System.Drawing.Size(23, 22);
+            this.bindingNavigatorDeleteItem.Text = "Delete";
             // 
             // bindingNavigatorMoveFirstItem
             // 
@@ -138,16 +181,9 @@
             this.bindingNavigatorPositionItem.Text = "0";
             this.bindingNavigatorPositionItem.ToolTipText = "Current position";
             // 
-            // bindingNavigatorCountItem
-            // 
-            this.bindingNavigatorCountItem.Name = "bindingNavigatorCountItem";
-            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(35, 22);
-            this.bindingNavigatorCountItem.Text = "of {0}";
-            this.bindingNavigatorCountItem.ToolTipText = "Total number of items";
-            // 
             // bindingNavigatorSeparator1
             // 
-            this.bindingNavigatorSeparator1.Name = "bindingNavigatorSeparator";
+            this.bindingNavigatorSeparator1.Name = "bindingNavigatorSeparator1";
             this.bindingNavigatorSeparator1.Size = new System.Drawing.Size(6, 25);
             // 
             // bindingNavigatorMoveNextItem
@@ -170,26 +206,8 @@
             // 
             // bindingNavigatorSeparator2
             // 
-            this.bindingNavigatorSeparator2.Name = "bindingNavigatorSeparator";
+            this.bindingNavigatorSeparator2.Name = "bindingNavigatorSeparator2";
             this.bindingNavigatorSeparator2.Size = new System.Drawing.Size(6, 25);
-            // 
-            // bindingNavigatorAddNewItem
-            // 
-            this.bindingNavigatorAddNewItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorAddNewItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorAddNewItem.Image")));
-            this.bindingNavigatorAddNewItem.Name = "bindingNavigatorAddNewItem";
-            this.bindingNavigatorAddNewItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorAddNewItem.Size = new System.Drawing.Size(23, 22);
-            this.bindingNavigatorAddNewItem.Text = "Add new";
-            // 
-            // bindingNavigatorDeleteItem
-            // 
-            this.bindingNavigatorDeleteItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorDeleteItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorDeleteItem.Image")));
-            this.bindingNavigatorDeleteItem.Name = "bindingNavigatorDeleteItem";
-            this.bindingNavigatorDeleteItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorDeleteItem.Size = new System.Drawing.Size(23, 22);
-            this.bindingNavigatorDeleteItem.Text = "Delete";
             // 
             // recipeBindingNavigatorSaveItem
             // 
@@ -210,59 +228,6 @@
             this.ingredientsGroupBox.TabStop = false;
             this.ingredientsGroupBox.Text = "Ingredients";
             // 
-            // recipeGroupBox
-            // 
-            this.recipeGroupBox.Controls.Add(descriptionLabel);
-            this.recipeGroupBox.Controls.Add(this.descriptionTextBox);
-            this.recipeGroupBox.Controls.Add(titleLabel);
-            this.recipeGroupBox.Controls.Add(this.titleTextBox);
-            this.recipeGroupBox.Location = new System.Drawing.Point(12, 39);
-            this.recipeGroupBox.Name = "recipeGroupBox";
-            this.recipeGroupBox.Size = new System.Drawing.Size(457, 160);
-            this.recipeGroupBox.TabIndex = 6;
-            this.recipeGroupBox.TabStop = false;
-            this.recipeGroupBox.Text = "Recipe Information";
-            // 
-            // descriptionLabel
-            // 
-            descriptionLabel.AutoSize = true;
-            descriptionLabel.Location = new System.Drawing.Point(6, 43);
-            descriptionLabel.Name = "descriptionLabel";
-            descriptionLabel.Size = new System.Drawing.Size(63, 13);
-            descriptionLabel.TabIndex = 11;
-            descriptionLabel.Text = "Description:";
-            // 
-            // descriptionTextBox
-            // 
-            this.descriptionTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.recipeBindingSource, "Description", true));
-            this.descriptionTextBox.Location = new System.Drawing.Point(75, 40);
-            this.descriptionTextBox.Multiline = true;
-            this.descriptionTextBox.Name = "descriptionTextBox";
-            this.descriptionTextBox.Size = new System.Drawing.Size(375, 114);
-            this.descriptionTextBox.TabIndex = 12;
-            // 
-            // titleLabel
-            // 
-            titleLabel.AutoSize = true;
-            titleLabel.Location = new System.Drawing.Point(39, 17);
-            titleLabel.Name = "titleLabel";
-            titleLabel.Size = new System.Drawing.Size(30, 13);
-            titleLabel.TabIndex = 9;
-            titleLabel.Text = "Title:";
-            // 
-            // titleTextBox
-            // 
-            this.titleTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.recipeBindingSource, "Title", true));
-            this.titleTextBox.Location = new System.Drawing.Point(75, 14);
-            this.titleTextBox.Name = "titleTextBox";
-            this.titleTextBox.Size = new System.Drawing.Size(375, 20);
-            this.titleTextBox.TabIndex = 10;
-            // 
-            // ingredientsBindingSource
-            // 
-            this.ingredientsBindingSource.DataMember = "Ingredients";
-            this.ingredientsBindingSource.DataSource = this.recipeBindingSource;
-            // 
             // ingredientsDataGridView
             // 
             this.ingredientsDataGridView.AutoGenerateColumns = false;
@@ -276,6 +241,42 @@
             this.ingredientsDataGridView.Name = "ingredientsDataGridView";
             this.ingredientsDataGridView.Size = new System.Drawing.Size(441, 148);
             this.ingredientsDataGridView.TabIndex = 0;
+            this.ingredientsDataGridView.EnabledChanged += new System.EventHandler(this.DataGridView_EnabledChanged);
+            // 
+            // ingredientsBindingSource
+            // 
+            this.ingredientsBindingSource.DataMember = "Ingredients";
+            this.ingredientsBindingSource.DataSource = this.recipeBindingSource;
+            // 
+            // recipeGroupBox
+            // 
+            this.recipeGroupBox.Controls.Add(descriptionLabel);
+            this.recipeGroupBox.Controls.Add(this.descriptionTextBox);
+            this.recipeGroupBox.Controls.Add(titleLabel);
+            this.recipeGroupBox.Controls.Add(this.titleTextBox);
+            this.recipeGroupBox.Location = new System.Drawing.Point(12, 39);
+            this.recipeGroupBox.Name = "recipeGroupBox";
+            this.recipeGroupBox.Size = new System.Drawing.Size(457, 160);
+            this.recipeGroupBox.TabIndex = 6;
+            this.recipeGroupBox.TabStop = false;
+            this.recipeGroupBox.Text = "Recipe Information";
+            // 
+            // descriptionTextBox
+            // 
+            this.descriptionTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.recipeBindingSource, "Description", true));
+            this.descriptionTextBox.Location = new System.Drawing.Point(75, 40);
+            this.descriptionTextBox.Multiline = true;
+            this.descriptionTextBox.Name = "descriptionTextBox";
+            this.descriptionTextBox.Size = new System.Drawing.Size(375, 114);
+            this.descriptionTextBox.TabIndex = 12;
+            // 
+            // titleTextBox
+            // 
+            this.titleTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.recipeBindingSource, "Title", true));
+            this.titleTextBox.Location = new System.Drawing.Point(75, 14);
+            this.titleTextBox.Name = "titleTextBox";
+            this.titleTextBox.Size = new System.Drawing.Size(375, 20);
+            this.titleTextBox.TabIndex = 10;
             // 
             // stepsGroupBox
             // 
@@ -286,11 +287,6 @@
             this.stepsGroupBox.TabIndex = 7;
             this.stepsGroupBox.TabStop = false;
             this.stepsGroupBox.Text = "Steps";
-            // 
-            // stepsBindingSource
-            // 
-            this.stepsBindingSource.DataMember = "Steps";
-            this.stepsBindingSource.DataSource = this.recipeBindingSource;
             // 
             // stepsDataGridView
             // 
@@ -305,6 +301,12 @@
             this.stepsDataGridView.Name = "stepsDataGridView";
             this.stepsDataGridView.Size = new System.Drawing.Size(441, 221);
             this.stepsDataGridView.TabIndex = 0;
+            this.stepsDataGridView.EnabledChanged += new System.EventHandler(this.DataGridView_EnabledChanged);
+            // 
+            // stepsBindingSource
+            // 
+            this.stepsBindingSource.DataMember = "Steps";
+            this.stepsBindingSource.DataSource = this.recipeBindingSource;
             // 
             // dataGridViewTextBoxColumn4
             // 
@@ -371,13 +373,13 @@
             this.recipeBindingNavigator.ResumeLayout(false);
             this.recipeBindingNavigator.PerformLayout();
             this.ingredientsGroupBox.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.ingredientsDataGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ingredientsBindingSource)).EndInit();
             this.recipeGroupBox.ResumeLayout(false);
             this.recipeGroupBox.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.ingredientsBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ingredientsDataGridView)).EndInit();
             this.stepsGroupBox.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.stepsBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.stepsDataGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.stepsBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.recipeBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
