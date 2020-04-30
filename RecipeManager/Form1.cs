@@ -87,7 +87,7 @@ namespace RecipeManager
         private void DataGridView_EnabledChanged(object sender, EventArgs e)
         {
             if (!((DataGridView)sender).Enabled)
-                {
+            {
                 ((DataGridView)sender).DefaultCellStyle.BackColor = SystemColors.Control;
                 ((DataGridView)sender).DefaultCellStyle.ForeColor = SystemColors.GrayText;
                 ((DataGridView)sender).ColumnHeadersDefaultCellStyle.BackColor = SystemColors.Control;
